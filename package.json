@@ -1,0 +1,50 @@
+{
+  "name": "@brainylab/prettier-config",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "André Felipe Schulle",
+    "email": "dev@brainylab.com.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brainylab/prettier-config.git"
+  },
+  "keywords": [
+    "prettier",
+    "config",
+    "preset",
+    "brainylab"
+  ],
+  "description": "Prettier config for BrainyLab projects",
+  "main": "index.js",
+  "scripts": {
+    "commit:add": "git add .",
+    "commit:detail": "cz",
+    "commit:push": "git push",
+    "commit": "pnpm commit:add && pnpm commit:detail && pnpm commit:push"
+  },
+  "dependencies": {
+    "prettier": "3.3.2"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "prettier": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
