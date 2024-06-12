@@ -1,11 +1,17 @@
 {
   "name": "@brainylab/prettier-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "author": {
     "name": "André Felipe Schulle",
     "email": "dev@brainylab.com.br"
   },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/brainylab/prettier-config.git"
@@ -16,9 +22,14 @@
     "preset",
     "brainylab"
   ],
+  "files": [
+    "index.js",
+    "package.json",
+    "README.md"
+  ],
   "description": "Prettier config for BrainyLab projects",
-  "main": "index.js",
   "scripts": {
+    "build": "pnpm tsup ./index.ts --format esm,cjs --outDir ./dist",
     "commit:add": "git add .",
     "commit:detail": "cz",
     "commit:push": "git push",
@@ -29,7 +40,8 @@
   },
   "devDependencies": {
     "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "tsup": "^8.1.0"
   },
   "engines": {
     "node": ">=18"

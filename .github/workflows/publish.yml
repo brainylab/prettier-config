@@ -27,6 +27,9 @@ jobs:
       - name: Github package registry authentication
         run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.PUBLISH_TOKEN_GRP }}
 
+      - name: Build Packages
+        run: npm install && npm run build
+
       - name: Publish Packages on GRP
         run: npm publish --provenance --access public
 
@@ -47,6 +50,9 @@ jobs:
 
       - name: Npm registry authentication
         run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+
+      - name: Build Packages
+        run: npm install && npm run build
 
       - name: Publish Packages on NPM
         run: npm publish --provenance --access public
