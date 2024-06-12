@@ -21,14 +21,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Build Packages
+        run: npm install && npm run build
+
       - name: Set package registry GRP
         run: npm config set registry https://npm.pkg.github.com
 
       - name: Github package registry authentication
         run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.PUBLISH_TOKEN_GRP }}
-
-      - name: Build Packages
-        run: npm install && npm run build
 
       - name: Publish Packages on GRP
         run: npm publish --provenance --access public
