@@ -1,6 +1,6 @@
 {
   "name": "@brainylab/prettier-config",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -29,7 +29,7 @@
   ],
   "description": "Prettier config for BrainyLab projects",
   "scripts": {
-    "build": "pnpm tsup ./index.ts --format esm,cjs --outDir ./dist",
+    "build": "npx tsup ./index.ts --format esm,cjs --outDir ./dist",
     "commit:add": "git add .",
     "commit:detail": "cz",
     "commit:push": "git push",
