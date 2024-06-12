@@ -47,6 +47,22 @@ export default {
 };
 ```
 
+and configure VS Code add:
+```json
+"[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+```
+
+Install
+[Prettier Plugin on VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode):
+</br> 
+</br> 
+![Prettier Logo](https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/10.4.0/1711025051911/Microsoft.VisualStudio.Services.Icons.Default)
+
+
+
 ## License
 
 MIT
