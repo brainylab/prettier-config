@@ -49,10 +49,12 @@ export default {
 
 and configure VS Code add:
 ```json
-"[javascript][javascriptreact][typescript][typescriptreact]": {
-    "editor.formatOnSave": true,
+{
+   "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+}
+ 
+
 ```
 
 Install

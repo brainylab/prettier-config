@@ -1,48 +1,55 @@
 {
   "name": "@brainylab/prettier-config",
-  "version": "0.1.5",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
-  },
-  "author": {
-    "name": "André Felipe Schulle",
-    "email": "dev@brainylab.com.br"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brainylab/prettier-config.git"
-  },
+  "version": "0.2.0",
+  "description": "Prettier config for BrainyLab projects",
   "keywords": [
     "prettier",
     "config",
     "preset",
     "brainylab"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brainylab/prettier-config.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "André Felipe Schulle",
+    "email": "dev@brainylab.com.br"
+  },
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "files": [
     "dist",
+    "package.json",
     "README.md"
   ],
-  "description": "Prettier config for BrainyLab projects",
   "scripts": {
-    "build": "npx tsup ./index.ts --format esm,cjs --outDir ./dist",
+    "build": "npx tsup",
+    "commit": "pnpm commit:add && pnpm commit:detail && pnpm commit:push",
     "commit:add": "git add .",
     "commit:detail": "cz",
-    "commit:push": "git push",
-    "commit": "pnpm commit:add && pnpm commit:detail && pnpm commit:push"
+    "commit:push": "git push"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
-    "prettier": "3.3.2"
+    "prettier": "3.3.2",
+    "prettier-plugin-curly": "^0.2.1",
+    "prettier-plugin-packagejson": "^2.5.0"
   },
   "devDependencies": {
+    "@types/node": "^20.14.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "tsup": "^8.1.0"
-  },
-  "engines": {
-    "node": ">=18"
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "prettier": ">=3"
@@ -52,9 +59,7 @@
       "optional": true
     }
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "engines": {
+    "node": ">=18"
   }
 }
