@@ -1,66 +1,67 @@
 {
-  "name": "@brainylab/prettier-config",
-  "version": "0.2.3",
-  "description": "Prettier config for BrainyLab projects",
-  "keywords": [
-    "prettier",
-    "config",
-    "preset",
-    "brainylab"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brainylab/prettier-config.git"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "André Felipe Schulle",
-    "email": "dev@brainylab.com.br"
-  },
-  "type": "module",
-  "exports": "./index.js",
-  "main": "./index.js",
-  "module": "./index.js",
-  "types": "./index.d.ts",
-  "scripts": {
-    "build": "npm run build:remove && npm run build:configs && npm run build:packages",
-    "build:configs": "npx tsup",
-    "build:packages": "npx tsx ./scripts/build-packages.ts",
-    "build:remove": "rm -rf ./dist",
-    "commit": "pnpm commit:add && pnpm commit:detail && pnpm commit:push",
-    "commit:add": "git add .",
-    "commit:detail": "cz",
-    "commit:push": "git push"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "dependencies": {
-    "prettier": "3.3.2",
-    "prettier-plugin-curly": "^0.2.1",
-    "prettier-plugin-packagejson": "^2.5.0"
-  },
-  "devDependencies": {
-    "@brainylab/eslint-config": "^2.3.3",
-    "@types/node": "^20.14.2",
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "fast-glob": "^3.3.2",
-    "tsup": "^8.1.0",
-    "tsx": "^4.15.4",
-    "typescript": "^5.4.5"
-  },
-  "peerDependencies": {
-    "prettier": ">=3"
-  },
-  "peerDependenciesMeta": {
-    "typescript": {
-      "optional": true
-    }
-  },
-  "engines": {
-    "node": ">=18"
-  }
+	"name": "@brainylab/prettier-config",
+	"version": "0.2.4",
+	"description": "Prettier config for BrainyLab projects",
+	"keywords": [
+		"prettier",
+		"config",
+		"preset",
+		"brainylab"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brainylab/prettier-config.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "André Felipe Schulle",
+		"email": "dev@brainylab.com.br"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"main": "./index.js",
+	"module": "./index.js",
+	"types": "./index.d.ts",
+	"scripts": {
+		"build": "npm run build:remove && npm run build:configs && npm run build:packages && npm run build:public-archives",
+		"build:configs": "npx tsup",
+		"build:packages": "npx tsx ./scripts/build-packages.ts",
+		"build:public-archives": "cp ./README.md ./dist && cp ./LICENSE ./dist",
+		"build:remove": "rm -rf ./dist",
+		"commit": "pnpm commit:add && pnpm commit:detail && pnpm commit:push",
+		"commit:add": "git add .",
+		"commit:detail": "cz",
+		"commit:push": "git push"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"dependencies": {
+		"prettier": "3.3.2",
+		"prettier-plugin-curly": "^0.2.1",
+		"prettier-plugin-packagejson": "^2.5.0"
+	},
+	"devDependencies": {
+		"@brainylab/eslint-config": "^2.3.3",
+		"@types/node": "^20.14.2",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"fast-glob": "^3.3.2",
+		"tsup": "^8.1.0",
+		"tsx": "^4.15.4",
+		"typescript": "^5.4.5"
+	},
+	"peerDependencies": {
+		"prettier": ">=3"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
+	"engines": {
+		"node": ">=18"
+	}
 }
