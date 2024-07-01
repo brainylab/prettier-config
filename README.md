@@ -28,25 +28,16 @@ create file .eslintrc.json in main project folder, add the lines below in the fi
 
 2. Add code to:
 
-```json
-// package.json
-  "prettier": "@brainylab/prettier-config",
-```
-
-```js
-// .prettierrc.js
-module.exports = {
-  ...require('@brainylab/prettier-config'),
-};
-```
-
 ```js
 // prettier.config.js
-import prettierConfig from '@brainylab/prettier-config';
+import { createConfig } from "@brainylab/prettier-config";
 
-export default {
-  ...prettierConfig,
-};
+export default createConfig({
+  configs: {}, // add custom config
+  presets: {
+    tailwind: true, // usage tailwind preset
+  },
+});
 ```
 
 and configure VS Code add:
