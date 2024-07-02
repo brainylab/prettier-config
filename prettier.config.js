@@ -1,3 +1,5 @@
-import { createConfig } from "./dist/index.js";
+import prettierConfig from './dist/index.js';
 
-export default createConfig({ presets: { tailwind: true } });
+export default {
+	...prettierConfig,
+};
