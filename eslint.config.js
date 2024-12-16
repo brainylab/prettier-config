@@ -1,7 +1,4 @@
-import { createConfig } from '@brainylab/eslint-config';
 
-export default createConfig({
-  presets: {
-    typescript: true,
-  },
-});
+import { typescriptConfig } from "@brainylab/eslint-config-typescript";
+
+export default [...typescriptConfig];

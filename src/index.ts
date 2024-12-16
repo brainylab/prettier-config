@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import type { Config } from 'prettier';
 
 export default {
